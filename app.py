@@ -4,12 +4,13 @@ import json
 from flask import Flask, request, jsonify
 
 # az webapp config set --resource-group rg-data-dev --name api-endpoint --startup-file "gunicorn --bind=0.0.0.0 --timeout 600 main:app"
+# az webapp up --sku B1 --name api-endpoint
 
 app = Flask(__name__)
 
 temp_file = "data.txt"
 
-@app.route('/', methods=['GET'])
+@app.route('/need', methods=['GET'])
 def query_records():
     name = request.args.get('name')
     print(name)
