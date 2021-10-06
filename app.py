@@ -3,6 +3,8 @@
 import json
 from flask import Flask, request, jsonify
 
+# az webapp config set --resource-group rg-data-dev --name api-endpoint --startup-file "gunicorn --bind=0.0.0.0 --timeout 600 main:app"
+
 app = Flask(__name__)
 
 temp_file = "data.txt"
